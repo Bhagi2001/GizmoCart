@@ -14,7 +14,7 @@ const Product = () => {
 
     const { id } = useParams();
 
-    const { products, router, addToCart } = useAppContext()
+    const { products, router, addToCart, currency } = useAppContext()
 
     const [mainImage, setMainImage] = useState(null);
     const [productData, setProductData] = useState(null);
@@ -85,9 +85,9 @@ const Product = () => {
                         {productData.description}
                     </p>
                     <p className="text-3xl font-medium mt-6">
-                        LKR {productData.offerPrice.toLocaleString('en-LK')}
+                        {currency}{productData.offerPrice.toLocaleString('en-US')}
                         <span className="text-base font-normal text-gray-800/60 line-through ml-2">
-                            LKR {productData.price.toLocaleString('en-LK')}
+                            {currency}{productData.price.toLocaleString('en-US')}
                         </span>
                     </p>
                     <hr className="bg-gray-600 my-6" />
